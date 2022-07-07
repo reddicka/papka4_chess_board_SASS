@@ -1,0 +1,158 @@
+@charset "UTF-8";
+.pawn_black::after {
+  content: "♟";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.pawn_white::after {
+  content: "♟";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+.rook_black::after {
+  content: "♜";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.rook_white::after {
+  content: "♜";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+.knight_black::after {
+  content: "♞";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.knight_white::after {
+  content: "♞";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+.bishop_black::after {
+  content: "♝";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.bishop_white::after {
+  content: "♝";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+.queen_black::after {
+  content: "♛";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.queen_white::after {
+  content: "♛";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+.king_black::after {
+  content: "♚";
+  color: rgb(19, 19, 19);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.7);
+}
+.king_white::after {
+  content: "♚";
+  color: rgb(231, 231, 231);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0ceb5;
+}
+
+.board {
+  width: 800px;
+  height: 800px;
+  border: 2px solid rgb(31, 31, 31);
+}
+.board-wrapper {
+  position: relative;
+  display: inline-block;
+  left: 20px;
+  margin: 50px;
+  padding: 80px;
+  background: url("/src/img/wood-board.jpg") no-repeat;
+  background-size: cover;
+  border: 3px solid rgb(31, 31, 31);
+}
+.board-row {
+  position: relative;
+  font-size: 0;
+}
+.board-cell {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  opacity: 0.9;
+}
+.board-cell::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  font-weight: 500;
+  z-index: 1;
+}
+.board-row:nth-of-type(odd) .board-cell:nth-of-type(odd), .board-row:nth-of-type(even) .board-cell:nth-of-type(even) {
+  background: url("/src/img/wood-light.jpg") no-repeat;
+  background-size: cover;
+}
+.board-row:nth-of-type(odd) .board-cell:nth-of-type(even), .board-row:nth-of-type(even) .board-cell:nth-of-type(odd) {
+  background: url("/src/img/wood-dark.jpg") no-repeat;
+  background-size: cover;
+}
+.board-digits, .board-letters {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: 600;
+  z-index: 2;
+}
+.board-digits {
+  flex-direction: column;
+  top: 80px;
+  left: 50px;
+  height: 800px;
+}
+.board-digit {
+  text-align: end;
+  height: 80px;
+  padding-top: 35px;
+}
+.board-digit-item {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-shadow: 0px 0px 3px rgb(241, 241, 241);
+}
+.board-letters {
+  flex-direction: row;
+  align-items: flex-end;
+  top: 80px;
+  height: 845px;
+  width: 800px;
+}
+.board-letters-item {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  text-shadow: 0px 0px 3px rgb(241, 241, 241);
+}

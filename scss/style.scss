@@ -1,0 +1,138 @@
+@import "_pieces";
+
+$board_size-desktop: 800px;
+$board_size-table: 600px;
+$board_size-mobile: 400px;
+$border-color: rgb(31, 31, 31);
+$letter_shadow: rgb(241, 241, 241);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0ceb5;
+}
+
+.board {
+    width: $board_size;
+    height: $board_size;
+
+    border: 2px solid $border-color;
+
+    &-wrapper {
+        position: relative;
+        display: inline-block;
+
+        left: 20px;
+
+        margin: 50px;
+        padding: calc($board-size / 10);
+        
+        background: url("/src/img/wood-board.jpg") no-repeat;
+        background-size: cover;
+
+        border: 3px solid $border-color;
+    }
+
+    &-row {
+        position: relative;
+        font-size: 0;
+    }
+
+    &-cell {
+        display: inline-block;
+        position: relative;
+    
+        width: calc($board-size / 8);
+        height: calc($board-size / 8);
+
+        opacity: 0.9;
+    
+        &::after{
+            position: absolute;
+            
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            
+            font-size: 90px;
+            font-weight: 500;
+            
+            z-index: 1;
+        }
+    }
+
+    &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
+    &-row:nth-of-type(even) &-cell:nth-of-type(even) {
+        background: url("/src/img/wood-light.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    &-row:nth-of-type(odd) &-cell:nth-of-type(even),
+    &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
+        background: url("/src/img/wood-dark.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    // Подписи строк и столбцов
+    &-digits,
+    &-letters {
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        font-weight: 600;
+
+        z-index: 2;
+    }
+
+    &-digits {
+        flex-direction: column;
+        top: calc($board-size / 10);
+        left: 50px;
+        height: $board_size;
+    }
+
+    &-digit {
+        text-align: end;
+        height: calc($board-size / 10);
+        padding-top: 35px;
+
+        &-item {
+            position: sticky;
+            top: 0;
+            text-shadow: 0px 0px 3px $letter_shadow;
+        }
+    }
+
+
+    &-letters {
+        flex-direction: row;
+        align-items: flex-end;
+        top: calc($board-size / 10);
+
+        height: calc($board_size + 45px);
+        width: $board_size;
+
+        &-item {
+            position: sticky;
+            bottom: 0;
+            text-shadow: 0px 0px 3px $letter_shadow;
+        }
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    
+    
+}
+
+@media (max-width: 767px) {
+    
+}

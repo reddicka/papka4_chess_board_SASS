@@ -1,0 +1,85 @@
+$chess_black: rgb(19, 19, 19);
+$chess_black_shadow: rgba(255, 255, 255, 0.7);
+
+$chess_white: rgb(231, 231, 231);
+$chess_white_shadow: rgba(0, 0, 0, 0.7);
+
+
+@mixin pieces-template($color, $type) {
+    content: $type;
+    color: $color;
+
+
+    @if $color == $chess_black {
+        text-shadow: 0px 0px 3px $chess_black_shadow;
+    } @else {
+        text-shadow: 0px 0px 3px $chess_white_shadow;
+    }
+    
+}
+
+// Пешка
+.pawn {
+    &_black::after {
+        @include pieces-template($chess_black, "\265F");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265F");
+    }
+}
+
+// Крепость ебаная
+.rook {
+    &_black::after {
+        @include pieces-template($chess_black, "\265C");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265C");
+    }
+}
+
+// Лошодь
+.knight {
+    &_black::after {
+        @include pieces-template($chess_black, "\265E");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265E");
+    }
+}
+
+// Шапка
+.bishop {
+    &_black::after {
+        @include pieces-template($chess_black, "\265D");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265D");
+    }
+}
+
+// Петуч
+.queen {
+    &_black::after {
+        @include pieces-template($chess_black, "\265B");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265B");
+    }
+}
+
+// Медик
+.king {
+    &_black::after {
+        @include pieces-template($chess_black, "\265A");
+    }
+
+    &_white::after {
+        @include pieces-template($chess_white, "\265A");
+    }
+}
