@@ -1,10 +1,13 @@
 @import "_pieces";
 
-$board_size-desktop: 800px;
-$board_size-table: 600px;
-$board_size-mobile: 400px;
+$board-size-desktop: 800px;
+$board-size-tablet: 600px;
+$board-size-mobile: 400px;
 $border-color: rgb(31, 31, 31);
 $letter_shadow: rgb(241, 241, 241);
+
+$board-size: $board-size-desktop;
+
 
 * {
     margin: 0;
@@ -16,16 +19,14 @@ body {
 }
 
 .board {
-    width: $board_size;
-    height: $board_size;
+    width: $board-size;
+    height: $board-size;
 
     border: 2px solid $border-color;
 
     &-wrapper {
         position: relative;
         display: inline-block;
-
-        left: 20px;
 
         margin: 50px;
         padding: calc($board-size / 10);
@@ -92,9 +93,9 @@ body {
 
     &-digits {
         flex-direction: column;
-        top: calc($board-size / 10);
+        top: calc($board-size / 10 + 2px);
         left: 50px;
-        height: $board_size;
+        height: $board-size;
     }
 
     &-digit {
@@ -105,7 +106,8 @@ body {
         &-item {
             position: sticky;
             top: 0;
-            text-shadow: 0px 0px 3px $letter_shadow;
+            //text-shadow: 0px 0px 3px $letter_shadow;
+            -webkit-text-stroke: 0.2px rgb(255, 255, 255);
         }
     }
 
@@ -114,25 +116,129 @@ body {
         flex-direction: row;
         align-items: flex-end;
         top: calc($board-size / 10);
+        left: calc($board-size / 10 + 2px);
 
-        height: calc($board_size + 45px);
-        width: $board_size;
+        height: calc($board-size + 45px);
+        width: $board-size;
 
         &-item {
             position: sticky;
             bottom: 0;
             text-shadow: 0px 0px 3px $letter_shadow;
+            -webkit-text-stroke: 0.2px rgb(255, 255, 255);
+            text-transform: uppercase;
         }
     }
 }
 
-
-
 @media (max-width: 991px) {
+    body {
+        background-color: #ffffff;
+    }
     
+    .board {
+        width: $board-size-tablet;
+        height: $board-size-tablet;
     
+        &-wrapper {
+            padding: calc($board-size-tablet / 10);
+            background: #bebebe;
+        }
+    
+        &-cell {
+            width: calc($board-size-tablet / 8);
+            height: calc($board-size-tablet / 8);
+            opacity: 1;
+        
+            &::after{
+                font-size: 70px;
+            }
+        }
+    
+        &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
+        &-row:nth-of-type(even) &-cell:nth-of-type(even) {
+            background: #e4e4e4;
+        }
+    
+        &-row:nth-of-type(odd) &-cell:nth-of-type(even),
+        &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
+            background: #4b4b4b;
+        }
+
+        &-digits,
+        &-letters {
+            font-size: 25px;
+        }
+    
+        &-digits {
+            top: calc($board-size-tablet / 10 + 2px);
+            left: 35px;
+            height: $board-size-tablet;
+        }
+    
+        &-digit {
+            height: calc($board-size-tablet / 10);
+            padding-top: 25px;
+        }
+    
+        &-letters {
+            left: calc($board-size-tablet / 10 + 2px);
+            top: calc($board-size-tablet / 10);
+            height: calc($board-size-tablet + 40px);
+            width: $board-size-tablet;
+        }
+    }
 }
 
 @media (max-width: 767px) {
+    body {
+        background-color: #c8c8c8;
+    }
     
+    .board {
+        width: $board-size-mobile;
+        height: $board-size-mobile;
+    
+        &-wrapper {
+            padding: calc($board-size-mobile / 15);
+            background: rgb(255, 255, 255);
+        }
+    
+        &-cell {
+            width: calc($board-size-mobile / 8);
+            height: calc($board-size-mobile / 8);
+        
+            &::after{
+                font-size: 45px;
+            }
+        }
+    
+        &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
+        &-row:nth-of-type(even) &-cell:nth-of-type(even) {
+            background: rgb(255, 255, 255);
+        }
+    
+        &-row:nth-of-type(odd) &-cell:nth-of-type(even),
+        &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
+            background: rgb(46, 46, 46);
+        }
+    
+        &-digits {
+            top: calc($board-size-mobile / 15 + 2px);
+            left: 8px;
+            height: $board-size-mobile;
+        }
+    
+        &-digit {
+            height: calc($board-size-mobile / 10);
+            padding-top: 12px;
+        }
+    
+        &-letters {
+            left: calc($board-size-mobile / 15 + 2px);
+            top: calc($board-size-mobile / 15);
+            height: calc($board-size-mobile + 30px);
+            width: $board-size-mobile;
+        }
+    }
 }

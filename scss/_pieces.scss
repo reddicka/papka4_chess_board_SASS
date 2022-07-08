@@ -1,85 +1,70 @@
-$chess_black: rgb(19, 19, 19);
-$chess_black_shadow: rgba(255, 255, 255, 0.7);
+$black-chess_color: rgb(19, 19, 19);
+$black-chess_shadow: rgba(255, 255, 255, 0.7);
 
-$chess_white: rgb(231, 231, 231);
-$chess_white_shadow: rgba(0, 0, 0, 0.7);
+$white-chess_color: rgb(231, 231, 231);
+$white-chess_shadow: rgba(0, 0, 0, 0.7);
 
 
 @mixin pieces-template($color, $type) {
     content: $type;
     color: $color;
 
-
-    @if $color == $chess_black {
-        text-shadow: 0px 0px 3px $chess_black_shadow;
+    @if $color == $black-chess_color {
+        text-shadow: 0px 0px 3px $black-chess_shadow;
+        -webkit-text-stroke: 0.5px rgb(255, 255, 255);
     } @else {
-        text-shadow: 0px 0px 3px $chess_white_shadow;
+        text-shadow: 0px 0px 3px $white-chess_shadow;
+        -webkit-text-stroke: 0.5px rgb(0, 0, 0);
     }
+}
+
+.black {
+    &_pawn::after {
+        @include pieces-template($black-chess_color, "\265F")
+    }
+    &_rook::after {
+        @include pieces-template($black-chess_color, "\265C")
+    }
+    &_knight::after {
+        @include pieces-template($black-chess_color, "\265E")
+    }
+    &_bishop::after {
+        @include pieces-template($black-chess_color, "\265D")
+    }
+    &_queen::after {
+        @include pieces-template($black-chess_color, "\265B")
+    }
+    &_king::after {
+        @include pieces-template($black-chess_color, "\265A")
+    }
+}
+
+.white {
+    &_pawn::after {
+        @include pieces-template($white-chess_color, "\265F")
+    }
+    &_rook::after {
+        @include pieces-template($white-chess_color, "\265C")
+    }
+    &_knight::after {
+        @include pieces-template($white-chess_color, "\265E")
+    }
+    &_bishop::after {
+        @include pieces-template($white-chess_color, "\265D")
+    }
+    &_queen::after {
+        @include pieces-template($white-chess_color, "\265B")
+    }
+    &_king::after {
+        @include pieces-template($white-chess_color, "\265A")
+    }
+}
+
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
     
-}
-
-// Пешка
-.pawn {
-    &_black::after {
-        @include pieces-template($chess_black, "\265F");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265F");
-    }
-}
-
-// Крепость ебаная
-.rook {
-    &_black::after {
-        @include pieces-template($chess_black, "\265C");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265C");
-    }
-}
-
-// Лошодь
-.knight {
-    &_black::after {
-        @include pieces-template($chess_black, "\265E");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265E");
-    }
-}
-
-// Шапка
-.bishop {
-    &_black::after {
-        @include pieces-template($chess_black, "\265D");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265D");
-    }
-}
-
-// Петуч
-.queen {
-    &_black::after {
-        @include pieces-template($chess_black, "\265B");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265B");
-    }
-}
-
-// Медик
-.king {
-    &_black::after {
-        @include pieces-template($chess_black, "\265A");
-    }
-
-    &_white::after {
-        @include pieces-template($chess_white, "\265A");
-    }
 }
