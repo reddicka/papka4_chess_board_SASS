@@ -1,221 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Board</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chess Board</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="board-wrapper">
+            <div class="board-digits">
+                <div class="board-digit">
+                    <p class="board-digit-item">8</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">7</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">6</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">5</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">4</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">3</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">2</p>
+                </div>
+                <div class="board-digit">
+                    <p class="board-digit-item">1</p>
+                </div>
+            </div>
 
-    <div class="sticky">
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwds</p>
-    </div>
-    
-    <div class="board-wrapper">
+            <div class="board">
+                <div class="board-row">
+                    <div class="board-cell black_rook"></div>
+                    <div class="board-cell black_knight"></div>
+                    <div class="board-cell black_bishop"></div>
+                    <div class="board-cell black_queen"></div>
+                    <div class="board-cell black_king"></div>
+                    <div class="board-cell black_bishop"></div>
+                    <div class="board-cell black_knight"></div>
+                    <div class="board-cell black_rook"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                    <div class="board-cell black_pawn"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                    <div class="board-cell white_pawn"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell white_rook"></div>
+                    <div class="board-cell white_knight"></div>
+                    <div class="board-cell white_bishop"></div>
+                    <div class="board-cell white_queen"></div>
+                    <div class="board-cell white_king"></div>
+                    <div class="board-cell white_bishop"></div>
+                    <div class="board-cell white_knight"></div>
+                    <div class="board-cell white_rook"></div>
+                </div>
+            </div>
 
-        <div class="board-digits">
-            <div class="board-digit">
-                <p class="board-digit-item">8</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">7</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">6</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">5</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">4</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">3</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">2</p>
-            </div>
-            <div class="board-digit">
-                <p class="board-digit-item">1</p>
+            <div class="board-letters">
+                <p class="board-letters-item">a</p>
+                <p class="board-letters-item">c</p>
+                <p class="board-letters-item">b</p>
+                <p class="board-letters-item">d</p>
+                <p class="board-letters-item">e</p>
+                <p class="board-letters-item">f</p>
+                <p class="board-letters-item">g</p>
+                <p class="board-letters-item">h</p>
             </div>
         </div>
-
-        <div class="board">
-            <div class="board-row">
-                <div class="board-cell black_rook"></div>
-                <div class="board-cell black_knight"></div>
-                <div class="board-cell black_bishop"></div>
-                <div class="board-cell black_queen"></div>
-                <div class="board-cell black_king"></div>
-                <div class="board-cell black_bishop"></div>
-                <div class="board-cell black_knight"></div>
-                <div class="board-cell black_rook"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-                <div class="board-cell black_pawn"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-                <div class="board-cell"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-                <div class="board-cell white_pawn"></div>
-            </div>
-            <div class="board-row">
-                <div class="board-cell white_rook"></div>
-                <div class="board-cell white_knight"></div>
-                <div class="board-cell white_bishop"></div>
-                <div class="board-cell white_queen"></div>
-                <div class="board-cell white_king"></div>
-                <div class="board-cell white_bishop"></div>
-                <div class="board-cell white_knight"></div>
-                <div class="board-cell white_rook"></div>
-            </div>
-        </div>
-
-        <div class="board-letters">
-            <p class="board-letters-item">a</p>
-            <p class="board-letters-item">c</p>
-            <p class="board-letters-item">b</p>
-            <p class="board-letters-item">d</p>
-            <p class="board-letters-item">e</p>
-            <p class="board-letters-item">f</p>
-            <p class="board-letters-item">g</p>
-            <p class="board-letters-item">h</p>
-        </div>
-
-    </div>
-
-    <div class="sticky">
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwd</p>
-        <p>qwds</p>
-    </div>
-    
-    <script src="./main.js"></script>
-</body>
+        <script src="./main.js"></script>
+    </body>
 </html>
