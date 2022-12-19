@@ -1,4 +1,4 @@
-@import "_pieces";
+@import '_pieces';
 
 $board-size-desktop: 800px;
 $board-size-tablet: 600px;
@@ -7,7 +7,6 @@ $border-color: rgb(31, 31, 31);
 $letter_shadow: rgb(241, 241, 241);
 
 $board-size: $board-size-desktop;
-
 
 * {
     margin: 0;
@@ -30,8 +29,8 @@ body {
 
         margin: 50px;
         padding: calc($board-size / 10);
-        
-        background: url("/src/img/wood-board.jpg") no-repeat;
+
+        background: url('../src/img/wood-board.jpg') no-repeat;
         background-size: cover;
 
         border: 3px solid $border-color;
@@ -45,35 +44,35 @@ body {
     &-cell {
         display: inline-block;
         position: relative;
-    
+
         width: calc($board-size / 8);
         height: calc($board-size / 8);
 
         opacity: 0.9;
-    
-        &::after{
+
+        &::after {
             position: absolute;
-            
+
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            
+
             font-size: 90px;
             font-weight: 500;
-            
+
             z-index: 1;
         }
     }
 
     &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
     &-row:nth-of-type(even) &-cell:nth-of-type(even) {
-        background: url("/src/img/wood-light.jpg") no-repeat;
+        background: url('../src/img/wood-light.jpg') no-repeat;
         background-size: cover;
     }
 
     &-row:nth-of-type(odd) &-cell:nth-of-type(even),
     &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
-        background: url("/src/img/wood-dark.jpg") no-repeat;
+        background: url('../src/img/wood-dark.jpg') no-repeat;
         background-size: cover;
     }
 
@@ -111,7 +110,6 @@ body {
         }
     }
 
-
     &-letters {
         flex-direction: row;
         align-items: flex-end;
@@ -135,31 +133,31 @@ body {
     body {
         background-color: #ffffff;
     }
-    
+
     .board {
         width: $board-size-tablet;
         height: $board-size-tablet;
-    
+
         &-wrapper {
             padding: calc($board-size-tablet / 10);
             background: #bebebe;
         }
-    
+
         &-cell {
             width: calc($board-size-tablet / 8);
             height: calc($board-size-tablet / 8);
             opacity: 1;
-        
-            &::after{
+
+            &::after {
                 font-size: 70px;
             }
         }
-    
+
         &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
         &-row:nth-of-type(even) &-cell:nth-of-type(even) {
             background: #e4e4e4;
         }
-    
+
         &-row:nth-of-type(odd) &-cell:nth-of-type(even),
         &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
             background: #4b4b4b;
@@ -169,18 +167,18 @@ body {
         &-letters {
             font-size: 25px;
         }
-    
+
         &-digits {
             top: calc($board-size-tablet / 10 + 2px);
             left: 35px;
             height: $board-size-tablet;
         }
-    
+
         &-digit {
             height: calc($board-size-tablet / 10);
             padding-top: 25px;
         }
-    
+
         &-letters {
             left: calc($board-size-tablet / 10 + 2px);
             top: calc($board-size-tablet / 10);
@@ -194,46 +192,46 @@ body {
     body {
         background-color: #c8c8c8;
     }
-    
+
     .board {
         width: $board-size-mobile;
         height: $board-size-mobile;
-    
+
         &-wrapper {
             padding: calc($board-size-mobile / 15);
             background: rgb(255, 255, 255);
         }
-    
+
         &-cell {
             width: calc($board-size-mobile / 8);
             height: calc($board-size-mobile / 8);
-        
-            &::after{
+
+            &::after {
                 font-size: 45px;
             }
         }
-    
+
         &-row:nth-of-type(odd) &-cell:nth-of-type(odd),
         &-row:nth-of-type(even) &-cell:nth-of-type(even) {
             background: rgb(255, 255, 255);
         }
-    
+
         &-row:nth-of-type(odd) &-cell:nth-of-type(even),
         &-row:nth-of-type(even) &-cell:nth-of-type(odd) {
             background: rgb(46, 46, 46);
         }
-    
+
         &-digits {
             top: calc($board-size-mobile / 15 + 2px);
             left: 8px;
             height: $board-size-mobile;
         }
-    
+
         &-digit {
             height: calc($board-size-mobile / 10);
             padding-top: 12px;
         }
-    
+
         &-letters {
             left: calc($board-size-mobile / 15 + 2px);
             top: calc($board-size-mobile / 15);
